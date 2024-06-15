@@ -1,0 +1,47 @@
+<div class="profile">
+    <mat-card>
+        <mat-card-title>Experience</mat-card-title>
+        <mat-card-content>
+            <form [formGroup]="experienceForm" class="profile-form">
+                <div class="form-row">
+                    <mat-form-field class="custom-form-field" floatLabel="always">
+                        <mat-label>Employer</mat-label>
+                        <input matInput formControlName="employer" class="custom-input" placeholder="Name of school">
+                    </mat-form-field>
+                    <mat-form-field class="custom-form-field"floatLabel="always">
+                        <mat-label>Company</mat-label>
+                        <input matInput formControlName="company" class="custom-input" placeholder="Course studied">
+                    </mat-form-field>
+                </div>
+                <div class="form-row">
+                    <mat-form-field class="custom-form-field"floatLabel="always">
+                        <mat-label>Address</mat-label>
+                        <input matInput formControlName="address" class="custom-input" placeholder="Country name">
+                    </mat-form-field>
+                    <mat-form-field class="custom-form-field"floatLabel="always">
+                        <mat-label>Role</mat-label>
+                        <input matInput formControlName="role" class="custom-input" placeholder="State">
+                    </mat-form-field>
+                </div>
+                <div class="form-row">
+                    <mat-form-field class="custom-form-field"floatLabel="always">
+                        <mat-label>Start</mat-label>
+                        <input matInput formControlName="start" class="custom-input"  placeholder="MM/dd">
+                    </mat-form-field>
+                    <mat-form-field class="custom-form-field"floatLabel="always">
+                        <mat-label>Finish</mat-label>
+                        <input matInput formControlName="finish" class="custom-input" placeholder="MM/dd">
+                    </mat-form-field>
+                </div>
+                <mat-form-field>
+                    <div style="width: 700px;display: flex; align-items: center; margin-left: 50px;">
+                    <textarea matInput formControlName="description" class="custom-input"  style="width:100%; height: 100px;"></textarea>
+                    </div>
+                </mat-form-field>
+            </form>
+        </mat-card-content>
+        <div class="button-container">
+            <button mat-raised-button style="background-color: hsl(271, 76%, 53%);">Next session</button>
+        </div>
+    </mat-card>
+</div>

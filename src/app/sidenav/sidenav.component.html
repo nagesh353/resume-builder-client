@@ -1,0 +1,27 @@
+<mat-toolbar>
+    <mat-toolbar-row>
+        <span>Resumo Resume Builder</span>
+         </mat-toolbar-row>
+</mat-toolbar>
+<div style="display: flex;position: relative; z-index: 2; display: flex; margin-top: -56px;">
+  <div class="card">
+      <mat-card class="custom-card">
+          <mat-card-content>
+              <a mat-raised-button color="primary" routerLink="/template/profile" class="custom-button-width" style="margin-top: 40px;"><mat-icon>person</mat-icon>Personal information</a>
+          </mat-card-content>
+          <mat-card-content>
+              <a mat-raised-button color="primary" routerLink="/template/education" class="custom-button-width"><mat-icon>school</mat-icon>Education</a>
+          </mat-card-content>
+          <mat-card-content>
+              <a mat-raised-button color="primary" routerLink="/template/experience" class="custom-button-width"><mat-icon>work</mat-icon>Experience</a>
+          </mat-card-content>
+          <mat-card-content>
+              <a mat-raised-button color="primary" routerLink="/template/contact-information" class="custom-button-width"><mat-icon>contact_mail</mat-icon>Contact information</a>
+          </mat-card-content>
+          <mat-card-content>
+              <a mat-raised-button color="primary" routerLink="/template/awards" class="custom-button-width" style="margin-bottom: 40px;"> <mat-icon>verified_user</mat-icon> Award/Certification</a>
+          </mat-card-content>
+      </mat-card>
+  </div>
+  <router-outlet></router-outlet>
+</div>

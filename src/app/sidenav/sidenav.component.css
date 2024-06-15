@@ -1,0 +1,40 @@
+
+
+.custom-button-width {
+  width: 200px; 
+  border-radius: 5px;
+  background-color: hsl(271, 76%, 53%);
+  color: white;
+  display: flex;
+  justify-content: flex-start
+}
+.title-toolbar {
+  display: flex;
+  justify-content: space-between;
+  background-color: #2196F3;
+  color: white;
+}
+.card {
+  width: 280px;
+  justify-content: center;
+  border-radius: 10px;
+  margin-left: 20px;
+  margin-top: 30px;
+
+}
+.mat-toolbar {
+  background-color:  hsl(271, 76%, 53%);
+  height: 100px;
+}
+.custom-card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  border-radius: 15px;
+  height: 400px;
+  justify-content: space-between;
+}
+.mat-icon {
+  margin-right: 5px;
+}

@@ -1,0 +1,83 @@
+.profile {
+    margin-top: 30px;
+    margin-left: 20px;
+    height: 700px;
+    width: 900px
+}
+.profile-form {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 10px;
+}
+.custom-form-field {
+    grid-column: span 3; /* Each field takes up 3 columns */
+  }
+.form-row {
+    display: contents; /* Allows each row to span two columns */
+}
+
+/* .form-row:last-child {
+    grid-column: span 3;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+} */
+
+mat-form-field {
+    width: 90%;
+}
+
+.custom-form-field {
+    margin-bottom: 16px;
+    margin-left: 20px;
+}
+
+.custom-input {
+    margin: 0; /* Remove default margin */
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 8px;
+    background-color: #f9f9f9; /* Background shading */
+    box-shadow: none; /* Remove default box shadow */
+     /* Adjust input width to include margin */
+}
+
+.mat-form-field-outline, 
+.mat-form-field-outline-thick, 
+.mat-form-field-underline {
+    display: none; /* Hide default outlines and underline */
+}
+
+.mat-form-field-appearance-outline .mat-form-field-flex {
+    padding: 0; /* Remove default padding */
+}
+.mat-form-field-underline {
+    display: none !important;
+}
+
+.mat-form-field-flex {
+    align-items: center; /* Center align items to avoid overlap */
+}
+::ng-deep .mat-form-field-underline {
+    display: none;
+  }
+
+.mat-form-field-infix {
+    padding: 0; /* Remove padding to prevent input overlap */
+}
+.mat-card {
+    height: 500px;
+    border-radius: 10px;
+    width: 700px;
+    margin-top: 0px;
+}
+.button-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 16px;
+    margin-right: 15px;
+}
+.mat-card-content {
+    display: flex;
+    align-items: center;
+}
