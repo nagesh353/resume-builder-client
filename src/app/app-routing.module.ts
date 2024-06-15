@@ -8,17 +8,18 @@ import { ProfileComponent } from './profile/profile.component';
 import { EducationComponent } from './education/education.component';
 import { ExperienceComponent } from './experience/experience.component';
 import { ContactComponent } from './contact/contact.component';
+import { AuthGuard } from './auth.guard';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'signup', component: SignupComponent },
   { path: 'home', component: HomeComponent },
   {path:'login', component: LoginComponent},
-  { path: 'template', component: SidenavComponent, children: [
-    { path: 'profile', component: ProfileComponent },
-    {path: 'education', component: EducationComponent},
-    {path: 'experience', component: ExperienceComponent},
-    {path: 'contact-information', component: ContactComponent}
+  { path: 'template', canActivate: [AuthGuard],component: SidenavComponent, children: [
+    { path: 'profile', canActivate:[AuthGuard],component: ProfileComponent },
+    {path: 'education', canActivate: [AuthGuard],component: EducationComponent},
+    {path: 'experience',canActivate: [AuthGuard], component: ExperienceComponent},
+    {path: 'contact-information', canActivate:[AuthGuard],component: ContactComponent}
 ]}
 
 ];
