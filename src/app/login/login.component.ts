@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Form, FormBuilder, FormGroup,Validators } from '@angular/forms';
+import {Router } from '@angular/router';
+import { ApiService } from '../api.service';
 
 @Component({
   selector: 'app-login',
@@ -9,7 +11,7 @@ import { Form, FormBuilder, FormGroup,Validators } from '@angular/forms';
 export class LoginComponent implements OnInit {
   loginForm!: FormGroup
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder, private apiService: ApiService, private router: Router) { }
 
   ngOnInit(): void {
     this.loginForm = this.fb.group({
@@ -19,7 +21,12 @@ export class LoginComponent implements OnInit {
   }
   onSubmit() {
     if (this.loginForm.valid) {
-      console.log(this.loginForm.value);
+      this.apiService.login(this.loginForm.value).subscribe(() => {   
+        console.log('Login successful');
+        this.router.navigate(['/home'])
+        }, (error) => {
+          console.log('Error:', error);
+          });
     }
  }
 

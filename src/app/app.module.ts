@@ -25,6 +25,7 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 import { ContactComponent } from './contact/contact.component';
 import { AwardComponent } from './award/award.component'; 
 import {MatIconModule} from '@angular/material/icon'; 
+import {HttpClientModule} from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -55,7 +56,8 @@ import {MatIconModule} from '@angular/material/icon';
     MatListModule,
     MatGridListModule,
     MatCheckboxModule,
-    MatIconModule
+    MatIconModule,
+    HttpClientModule
     
 
     

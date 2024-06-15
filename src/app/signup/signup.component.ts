@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ApiService } from '../api.service';
+import {Router} from '@angular/router'
+
 
 @Component({
   selector: 'app-signup',
@@ -9,7 +12,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class SignupComponent implements OnInit {
   signupForm!: FormGroup
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder, private apiService: ApiService, private router: Router) { }
 
   ngOnInit(): void {
     this.signupForm = this.fb.group({
@@ -23,7 +26,15 @@ export class SignupComponent implements OnInit {
   }
   onSubmit() {
     if (this.signupForm.valid) {
-       console.log(this.signupForm.value);
+      this.apiService.signIn(this.signupForm.value).subscribe(() => {
+        this.router.navigate(['login'])
+      }, (error) => {
+        console.log(error);
+
+      });
+
+
+      
       }
   }
 
