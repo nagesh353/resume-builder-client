@@ -9,18 +9,24 @@ import { EducationComponent } from './education/education.component';
 import { ExperienceComponent } from './experience/experience.component';
 import { ContactComponent } from './contact/contact.component';
 import { AuthGuard } from './auth.guard';
+import { AuthInterceptor } from './auth.interceptor';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'signup', component: SignupComponent },
   { path: 'home', component: HomeComponent },
   {path:'login', component: LoginComponent},
-  { path: 'template', canActivate: [AuthGuard],component: SidenavComponent, children: [
-    { path: 'profile', canActivate:[AuthGuard],component: ProfileComponent },
-    {path: 'education', canActivate: [AuthGuard],component: EducationComponent},
-    {path: 'experience',canActivate: [AuthGuard], component: ExperienceComponent},
-    {path: 'contact-information', canActivate:[AuthGuard],component: ContactComponent}
-]}
+  {path: 'template',
+    component: SidenavComponent,
+    children: [
+      { path: 'profile', component: ProfileComponent, canActivate: [AuthGuard] },
+      { path: 'education', component: EducationComponent, canActivate: [AuthGuard] },
+      { path: 'experience', component: ExperienceComponent, canActivate: [AuthGuard] },
+      { path: 'contact-information', component: ContactComponent, canActivate: [AuthGuard] }
+    ],
+    canActivate: [AuthGuard],
+  }
+  
 
 ];
 

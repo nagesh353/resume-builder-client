@@ -25,7 +25,9 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 import { ContactComponent } from './contact/contact.component';
 import { AwardComponent } from './award/award.component'; 
 import {MatIconModule} from '@angular/material/icon'; 
-import {HttpClientModule} from '@angular/common/http';
+import {HttpClientModule,HTTP_INTERCEPTORS} from '@angular/common/http';
+import { AuthGuard } from './auth.guard';
+import { AuthInterceptor } from './auth.interceptor';
 @NgModule({
   declarations: [
     AppComponent,
@@ -62,7 +64,9 @@ import {HttpClientModule} from '@angular/common/http';
 
     
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
